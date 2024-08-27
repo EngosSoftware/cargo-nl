@@ -1,0 +1,14 @@
+[package]
+name = "cargo-nl"
+version = "0.0.1"
+authors = ["Dariusz Depta <depta@engos.de>"]
+description = "Text file ending checker"
+documentation = "https://docs.rs/cargo-nl"
+repository = "https://github.com/EngosSoftware/cargo-nl.git"
+keywords = ["text", "file", "ending", "checker"]
+categories = ["command-line-utilities"]
+license = "MIT OR Apache-2.0"
+edition = "2021"
+
+[dependencies]
+walkdir = "2.5.0"
