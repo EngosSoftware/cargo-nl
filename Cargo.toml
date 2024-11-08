@@ -1,6 +1,6 @@
 [package]
 name = "cargo-nl"
-version = "0.0.2"
+version = "0.0.3"
 authors = ["Dariusz Depta <depta@engos.de>"]
 description = "Text file ending checker"
 documentation = "https://docs.rs/cargo-nl"
@@ -11,4 +11,5 @@ license = "MIT OR Apache-2.0"
 edition = "2021"
 
 [dependencies]
+antex = "0.0.8"
 walkdir = "2.5.0"
