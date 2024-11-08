@@ -3,7 +3,7 @@ use std::path::Path;
 use walkdir::WalkDir;
 
 const EXCLUDED_NAMES: [&str; 1] = ["target"];
-const ACCEPTED_EXTENSIONS: [&str; 3] = ["rs", "toml", "md"];
+const ACCEPTED_EXTENSIONS: [&str; 4] = ["rs", "toml", "md", "html"];
 
 fn visit<N, E, A>(root: &str, excluded_name: N, accepted_extension: E, action: A)
 where
@@ -42,10 +42,12 @@ fn main() {
     };
     let action = |path: &Path| {
         let content = fs::read_to_string(path).unwrap();
-        if content.ends_with("\n") {
-            println!("File {} ends properly.", path.display());
+        if content.ends_with("\n\n") {
+            println!("ERR {} ends with multiple newlines.", path.display());
+        } else if content.ends_with("\n") {
+            println!(" OK {}", path.display());
         } else {
-            println!("File {} is missing the trailing newline.", path.display());
+            println!("ERR {} is missing the trailing newline.", path.display());
         }
     };
     visit(".", is_excluded_name, is_accepted_extension, action);

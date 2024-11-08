@@ -1,6 +1,6 @@
 [package]
 name = "cargo-nl"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["Dariusz Depta <depta@engos.de>"]
 description = "Text file ending checker"
 documentation = "https://docs.rs/cargo-nl"
